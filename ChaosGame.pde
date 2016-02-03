@@ -1,5 +1,6 @@
 /*
 	TRY: Chaos Game	https://en.wikipedia.org/wiki/Chaos_game
+	http://www.shodor.org/interactivate/activities/TheChaosGame/
 */
 
 public int numTriangles = 20;
@@ -15,22 +16,6 @@ public void draw()
 }
 public void mouseMoved()//optional
 {
-	/*
-	int currentX = mouseX, currentY = mouseY;	// use currect mouseX and mouseY!
-	if(numTriangles > 0){
-		if(mouseX > currentX){
-			numTriangles++;
-			System.out.println(numTriangles);
-		}
-		else {
-			numTriangles--;
-			System.out.println(numTriangles);
-		}
-	}
-	else {
-		numTriangles = 20;
-	}
-	*/
 }
 
 public void mouseClicked()
