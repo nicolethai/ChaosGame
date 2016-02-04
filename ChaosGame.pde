@@ -1,6 +1,7 @@
 /*
 	TRY: Chaos Game	https://en.wikipedia.org/wiki/Chaos_game
 	http://www.shodor.org/interactivate/activities/TheChaosGame/
+	http://thatsmaths.com/2014/05/22/the-chaos-game/
 */
 
 public int numTriangles = 20;
@@ -12,7 +13,7 @@ public void setup()
 public void draw()
 {
 	background(0);
-	sierpinski(100, 600, 500);
+	sierpinski(100, 600, 100);
 }
 public void mouseMoved()//optional
 {
@@ -25,28 +26,10 @@ public void mouseClicked()
 
 public void sierpinski(int x, int y, int len) 
 {
-	if(len > numTriangles) { // len > num : num-- -> more triangles
-	// BASE CLASS : Calls Sierpinski with w & h of len x3 in different places
-	/*	triangle */
-		sierpinski(x, y, len/2); // triangle with height and width of len/2
-		sierpinski(x+(len/2), y, len/2); // triangle next to ^
-		sierpinski(x+(len/4), y-(len/2), len/2); // triangle on top of two ^
-	/**/
+	if(len > numTriangles) { 
 
-	/* FOR CHAOS GAME */
-
-	/**/
 	}
 	else {
-		// noFill();
-		// stroke((float)Math.random()*255, (float)Math.random()*255, (float)Math.random()*255);
-		// triangle(x, y, x+(len/2), y-len, x+len, y); // triangle with height and width of len
-		
-		/* FOR CHAOS GAME */
-		// stroke(255);
-	    // triangle(x, y, x+(len/2), y-len, x+len, y); // triangle with height and width of len
-	    stroke(255, 0, 0);
-	    point(x+len/2, y-len/2);
-		/**/
+
 	}
 }
