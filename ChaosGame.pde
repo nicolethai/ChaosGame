@@ -8,18 +8,20 @@
 		- Pick any point P0 and draw a dot there. This is our starting point. At each stage, we denote the current point by Pk and call it the game point.
 		- Roll the dice. If n comes up, draw a point half way between Pk and Cn. For example, if we roll a 2, we pick the point half way between the current point Pk and C2. This is the new game point.
 		- Repeat this procedure many times, drawing a new point at each step.
+
+	http://hmf.enseeiht.fr/travaux/CD9900/travaux/optmfn/hi/00pa/mfn03/program.htm
 */
 
 // public int numTriangles = 20;
+public int dice;
 public void setup()
 {
 	size(700, 700);
-	noLoop(); //stops the seizures
 }
 public void draw()
 {
 	background(0);
-	sierpinski(100, 600, 100);
+	sierpinski(100, 600, 100); // ADD COORD OF EQUIL. TRIANGLE
 }
 public void mouseMoved()//optional
 {
@@ -27,19 +29,40 @@ public void mouseMoved()//optional
 
 public void mouseClicked()
 {
-	// numTriangles+=2;
+	// needs draw
+	dice = (int)((Math.random()*3)+1);
+
 }
 
-public void sierpinski(int x, int y, int len) 
+public void sierpinski(int x1, int y1, int x2, int y2, int x3, int y3, int x, int y, int n) 
 {
-	if(len > 20) { 
-		sierpinski(x+len/2, y-len/2, len/2);
+	int s = (int)((Math.random()*3)+1);
+	if(s == 1) {
+		x += (x1-x)/2;
+		y += (y1-y)/2;
+	}
+	else if(s == 2) {
+		x += (x2-x)/2;
+		y += (y2-y)/2;
 	}
 	else {
-		strokeWeight(3);
-		stroke(255);
-		point(x, y);
-		point(x+len/2, y-len);
-		point(x+len, y);
+		x += (x3-x)/2;
+		y += (y3-y)/2;
 	}
+	point(x, y);
+
+	
+	// if(len > 20) { 
+	// 	// recursion
+	// 	sierpinski(x, y, len);
+	// 	sierpinski()
+	// }
+	// else {
+	// 	// draw 
+	// 	 to make in relation to x, y, len 
+	// 	   These are the corners of an equilateral triangle. 
+	// 	point(0,0);
+	// 	point(1,0);
+	// 	point(0.5,Math.sqrt(3)/2);
+	// }
 }
