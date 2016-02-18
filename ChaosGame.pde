@@ -1,4 +1,5 @@
 // Push 02.17.16 to check correct file
+// USED: git push -f origin master:gh-pages
 
 /*
 	TRY: Chaos Game	https://en.wikipedia.org/wiki/Chaos_game
